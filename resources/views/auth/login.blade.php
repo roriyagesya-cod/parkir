@@ -11,14 +11,15 @@
 <body>
   <div class="login-wrap">
     <div class="login-left">
-      <div class="brand-mark"><span class="brand-dot"></span>PORTAL PARKIR</div>
+      <div class="brand-mark"><span class="brand-dot"></span>PORTAL PARKIR KABASA</div>
       <div>
-        <div class="headline">Setiap kendaraan,<br>tercatat rapi<span class="accent">.</span></div>
+        <div class="headline">Lebih Mudah Dengan Parkir Kabasa,<br> Pasti Tercatat Rapi<span class="accent">.</span></div>
         <div class="sub">Sistem manajemen area parkir untuk pencatatan transaksi, tarif, dan aktivitas petugas secara real-time.</div>
       </div>
       <div class="plate-strip">
         <span class="plate-chip">AREA A · 40 slot</span>
         <span class="plate-chip">AREA B · 25 slot</span>
+        <span class="plate-chip">AREA C · 35 slot</span>
         <span class="plate-chip">MOTOR · Rp2.000/jam</span>
         <span class="plate-chip">MOBIL · Rp5.000/jam</span>
       </div>
@@ -44,15 +45,5 @@
           </div>
           <button class="btn btn-primary" type="submit">Masuk</button>
         </form>
-
-        <div class="demo-accounts">
-          <div><b>Akun demo (setelah php artisan db:seed)</b></div>
-          <div>Admin — admin / admin123</div>
-          <div>petugas — petugas / petugas123</div>
-          <div>Owner — owner / owner123</div>
-        </div>
-      </div>
-    </div>
-  </div>
 </body>
 </html>
