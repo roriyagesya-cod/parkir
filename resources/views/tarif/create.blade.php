@@ -9,7 +9,12 @@
       @csrf
       <div class="field">
         <label>Jenis kendaraan</label>
-        <input type="text" name="jenis_kendaraan" value="{{ old('jenis_kendaraan') }}" required>
+        <select name="jenis_kendaraan" required>
+          <option value="">-- Pilih jenis kendaraan --</option>
+          <option value="motor" {{ old('jenis_kendaraan') == 'motor' ? 'selected' : '' }}>Motor</option>
+          <option value="mobil" {{ old('jenis_kendaraan') == 'mobil' ? 'selected' : '' }}>Mobil</option>
+          <option value="truck" {{ old('jenis_kendaraan') == 'truck' ? 'selected' : '' }}>Truck</option>
+        </select>
         @error('jenis_kendaraan') <div class="error-box">{{ $message }}</div> @enderror
       </div>
       <div class="field">

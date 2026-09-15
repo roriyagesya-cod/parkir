@@ -22,7 +22,7 @@
         <span class="plate-chip">AREA C · 35 slot</span>
         <span class="plate-chip">MOTOR · Rp2.000/jam</span>
         <span class="plate-chip">MOBIL · Rp5.000/jam</span>
-      </div>
+     </div>
     </div>
     <div class="login-right">
       <div class="login-card">

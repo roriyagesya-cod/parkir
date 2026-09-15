@@ -22,10 +22,10 @@ class TarifController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'jenis_kendaraan' => 'required|string|max:20',
-            'tarif_per_jam' => 'required|numeric|min:0',
-        ]);
+       $data = $request->validate([
+    'jenis_kendaraan' => 'required|string|max:20|in:motor,mobil,truck',
+    'tarif_per_jam' => 'required|numeric|min:0',
+    ]);
 
         $tarif = Tarif::create($data);
 
