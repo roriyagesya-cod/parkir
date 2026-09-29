@@ -9,22 +9,25 @@ class RekapController extends Controller
 {
     public function index(Request $request)
     {
-        $dari = $request->query('dari');
-        $sampai = $request->query('sampai');
+        $query = Transaksi::with(['kendaraan', 'area'])
+            ->where('status', 'keluar');
 
-        $query = Transaksi::with(['kendaraan', 'area'])->where('status', 'keluar');
-
-        if ($dari) {
-            $query->whereDate('waktu_keluar', '>=', $dari);
+        if ($request->filled('dari')) {
+            $query->whereDate('waktu_keluar', '>=', $request->dari);
         }
-        if ($sampai) {
-            $query->whereDate('waktu_keluar', '<=', $sampai);
+        if ($request->filled('sampai')) {
+            $query->whereDate('waktu_keluar', '<=', $request->sampai);
         }
 
-        $rows = $query->latest('waktu_keluar')->get();
-        $totalTransaksi = $rows->count();
-        $totalPendapatan = $rows->sum('biaya_total');
+        $transaksi = $query->orderByDesc('waktu_keluar')->get();
 
-        return view('transaksi.rekap', compact('rows', 'dari', 'sampai', 'totalTransaksi', 'totalPendapatan'));
+        $total = $transaksi->count();
+        $pendapatan = $transaksi->sum('biaya_total');
+
+        $periode = ($request->filled('dari') || $request->filled('sampai'))
+            ? ($request->dari ?: 'Awal') . ' s/d ' . ($request->sampai ?: 'Sekarang')
+            : 'Awal s/d Sekarang';
+
+        return view('petugas.rekap', compact('transaksi', 'total', 'pendapatan', 'periode'));
     }
 }

@@ -21,7 +21,7 @@ class TransaksiController extends Controller
         $selesai = Transaksi::with(['kendaraan', 'area'])
             ->where('status', 'keluar')->latest('waktu_keluar')->get();
 
-        return view('transaksi.index', compact('tab', 'aktif', 'selesai'));
+       return view('petugas.index', compact('tab', 'aktif', 'selesai'));
     }
 
     public function create()
@@ -29,7 +29,7 @@ class TransaksiController extends Controller
         $areas = AreaParkir::whereColumn('terisi', '<', 'kapasitas')->orderBy('nama_area')->get();
         $tarifs = Tarif::orderBy('jenis_kendaraan')->get();
 
-        return view('transaksi.checkin', compact('areas', 'tarifs'));
+        return view('petugas.checkin', compact('areas', 'tarifs'));
     }
 
     public function store(Request $request)
@@ -110,6 +110,6 @@ class TransaksiController extends Controller
     {
         $transaksi->load(['kendaraan', 'area', 'tarif']);
 
-        return view('transaksi.struk', compact('transaksi'));
+             return view('petugas.struk', compact('transaksi'));
     }
 }
