@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('tb_kendaraan', function (Blueprint $table) {
             $table->increments('id_kendaraan');
-            $table->string('plat_nomor', 15);
+            $table->string('plat_nomer', 15);
             $table->string('jenis_kendaraan', 20);
             $table->string('warna', 20)->nullable();
             $table->string('pemilik', 100)->nullable();

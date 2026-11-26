@@ -2,15 +2,15 @@
 @section('title', 'Ubah Kendaraan — Portal Parkir')
 
 @section('content')
-  <div class="page-head"><div><h1>Ubah kendaraan</h1><div class="desc">Perbarui data {{ $kendaraan->plat_nomor }}.</div></div></div>
+  <div class="page-head"><div><h1>Ubah kendaraan</h1><div class="desc">Perbarui data {{ $kendaraan->plat_nomer }}.</div></div></div>
 
   <div class="form-card">
     <form method="POST" action="{{ route('kendaraan.update', $kendaraan) }}">
       @csrf @method('PUT')
       <div class="field">
         <label>Plat nomor</label>
-        <input type="text" name="plat_nomor" style="text-transform:uppercase;" value="{{ old('plat_nomor', $kendaraan->plat_nomor) }}" required>
-        @error('plat_nomor') <div class="error-box">{{ $message }}</div> @enderror
+        <input type="text" name="plat_nomer" style="text-transform:uppercase;" value="{{ old('plat_nomer', $kendaraan->plat_nomer) }}" required>
+        @error('plat_nomer') <div class="error-box">{{ $message }}</div> @enderror
       </div>
       <div class="field">
         <label>Jenis kendaraan</label>

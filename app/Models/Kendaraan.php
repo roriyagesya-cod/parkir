@@ -11,7 +11,7 @@ class Kendaraan extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'plat_nomor', 'jenis_kendaraan', 'warna', 'pemilik', 'id_user',
+        'plat_nomer', 'jenis_kendaraan', 'warna', 'pemilik', 'id_user',
     ];
 
     public function pemilikUser()

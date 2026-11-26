@@ -12,7 +12,7 @@
     <tbody>
       @forelse($kendaraans as $k)
         <tr>
-          <td class="mono">{{ $k->plat_nomor }}</td>
+          <td class="mono">{{ $k->plat_nomer }}</td>
           <td style="text-transform:capitalize;">{{ $k->jenis_kendaraan }}</td>
           <td>{{ $k->warna ?? '—' }}</td>
           <td>{{ $k->pemilik ?? '—' }}</td>

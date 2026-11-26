@@ -46,7 +46,7 @@
             @forelse ($transaksi as $t)
                 <tr>
                     <td class="mono">{{ $t->waktu_keluar }}</td>
-                    <td>{{ $t->kendaraan->plat_nomor ?? '-' }}</td>
+                    <td>{{ $t->kendaraan->plat_nomer ?? '-' }}</td>
                     <td>{{ $t->area->nama_area ?? '-' }}</td>
                     <td>Rp {{ number_format($t->biaya_total, 0, ',', '.') }}</td>
                 </tr>

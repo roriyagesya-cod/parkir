@@ -35,7 +35,7 @@ class TransaksiController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'plat_nomor' => 'required|string|max:15',
+            'plat_nomer' => 'required|string|max:15',
             'id_tarif' => 'required|exists:tb_tarif,id_tarif',
             'id_area' => 'required|exists:tb_area_parkir,id_area',
             'warna' => 'nullable|string|max:20',
@@ -48,10 +48,10 @@ class TransaksiController extends Controller
         }
 
         $tarif = Tarif::findOrFail($data['id_tarif']);
-        $plat = strtoupper($data['plat_nomor']);
+        $plat = strtoupper($data['plat_nomer']);
 
         $kendaraan = Kendaraan::firstOrCreate(
-            ['plat_nomor' => $plat],
+            ['plat_nomer' => $plat],
             [
                 'jenis_kendaraan' => $tarif->jenis_kendaraan,
                 'warna' => $data['warna'] ?? null,
@@ -100,7 +100,7 @@ class TransaksiController extends Controller
 
         LogAktivitas::catat(
             session('user_id'),
-            "Checkout kendaraan \"{$transaksi->kendaraan->plat_nomor}\" — Rp".number_format($biaya, 0, ',', '.')
+            "Checkout kendaraan \"{$transaksi->kendaraan->plat_nomer}\" — Rp".number_format($biaya, 0, ',', '.')
         );
 
         return redirect()->route('transaksi.struk', $transaksi)->with('status', 'Checkout berhasil diproses.');

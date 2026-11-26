@@ -9,8 +9,8 @@
       @csrf
       <div class="field">
         <label>Plat nomor</label>
-        <input type="text" name="plat_nomor" style="text-transform:uppercase;" value="{{ old('plat_nomor') }}" required>
-        @error('plat_nomor') <div class="error-box">{{ $message }}</div> @enderror
+        <input type="text" name="plat_nomer" style="text-transform:uppercase;" value="{{ old('plat_nomer') }}" required>
+        @error('plat_nomer') <div class="error-box">{{ $message }}</div> @enderror
       </div>
       <div class="field">
         <label>Jenis kendaraan</label>

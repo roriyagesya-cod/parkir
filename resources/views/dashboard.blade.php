@@ -42,7 +42,7 @@
         <tbody>
           @forelse($extra['antre'] as $t)
             <tr>
-              <td class="mono">{{ $t->kendaraan->plat_nomor }}</td>
+              <td class="mono">{{ $t->kendaraan->plat_nomer }}</td>
               <td>{{ $t->area->nama_area }}</td>
               <td class="mono">{{ $t->waktu_masuk->format('d M Y H:i') }}</td>
             </tr>
@@ -60,7 +60,7 @@
         <tbody>
           @forelse($extra['selesai'] as $t)
             <tr>
-              <td class="mono">{{ $t->kendaraan->plat_nomor }}</td>
+              <td class="mono">{{ $t->kendaraan->plat_nomer }}</td>
               <td class="mono">{{ $t->waktu_keluar->format('d M Y H:i') }}</td>
               <td class="mono">Rp{{ number_format($t->biaya_total, 0, ',', '.') }}</td>
             </tr>

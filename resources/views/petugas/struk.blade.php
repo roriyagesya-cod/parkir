@@ -33,7 +33,7 @@
     <div class="center"><span class="badge">LUNAS</span></div>
 
     <hr>
-    <div class="row"><span>Plat nomor</span><span>{{ $transaksi->kendaraan->plat_nomor }}</span></div>
+    <div class="row"><span>Plat nomor</span><span>{{ $transaksi->kendaraan->plat_nomer }}</span></div>
     <div class="row"><span>Jenis</span><span>{{ $transaksi->kendaraan->jenis_kendaraan ?? '-' }}</span></div>
     <div class="row"><span>Masuk</span><span>{{ $masuk->format('d M Y H:i') }}</span></div>
     <div class="row"><span>Keluar</span><span>{{ $keluar ? $keluar->format('d M Y H:i') : '-' }}</span></div>

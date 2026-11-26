@@ -25,7 +25,7 @@
     <tbody>
       @forelse($rows as $t)
         <tr>
-          <td class="mono">{{ $t->kendaraan->plat_nomor }}</td>
+          <td class="mono">{{ $t->kendaraan->plat_nomer }}</td>
           <td style="text-transform:capitalize;">{{ $t->kendaraan->jenis_kendaraan }}</td>
           <td>{{ $t->area->nama_area }}</td>
           <td class="mono">{{ $t->waktu_masuk->format('d M Y H:i') }}</td>
